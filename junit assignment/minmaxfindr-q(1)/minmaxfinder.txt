@@ -1,0 +1,23 @@
+package java_test;
+
+import java.util.Arrays;
+
+public class MinMaxFinder {
+    public static void main(String[] args) {
+        int[] digits={56,89,90,34,12,45,7,82};
+        int[] ret_Arr=findminmax(digits);
+        Arrays.stream(ret_Arr).forEach(System.out::println);
+    }
+    public static int[] findminmax(int[] nums){
+        int[] ret={Integer.MAX_VALUE,Integer.MIN_VALUE};
+        for (int i = 0; i < nums.length; i++) {
+            if(nums[i]>ret[1]){
+                ret[1]=nums[i];
+            }
+            if(nums[i]<ret[0]){
+                ret[0]=nums[i];
+            }
+        }
+        return ret;
+    }
+}
